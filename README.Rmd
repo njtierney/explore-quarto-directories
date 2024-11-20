@@ -1,0 +1,26 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# explore-quarto-directories
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of explore-quarto-directories is to demonstrate how quarto looks for files.
+
+Directory structure is as follows:
+
+```{r}
+fs::dir_tree(recurse = 2)
+```
+

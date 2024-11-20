@@ -1,0 +1,70 @@
+---
+title: second level
+format: 
+  html:
+    keep-md: true
+    embed-resources: true
+---
+
+Exploring how we read in data in Quarto
+
+```{r}
+library(tidyverse)
+```
+
+# Where does this quarto doc think we are?
+
+```{r}
+getwd()
+```
+
+
+Here's a file tree
+
+```{r}
+fs::dir_tree(recurse = 2)
+```
+
+# Writing files out from the root RStudio project
+
+```{r}
+#| error: true
+penguins_csv <- read_csv("penguins.csv")
+penguins_csv
+```
+
+
+```{r}
+#| error: true
+diamonds_csv <- read_csv("first/diamonds.csv")
+diamonds_csv
+```
+
+
+```{r}
+#| error: true
+storms_csv <- read_csv("first/second/storms.csv")
+storms_csv
+```
+
+# Referring to each file relative to where we are based
+
+```{r}
+#| error: true
+read_csv("../../penguins.csv")
+read_csv("../diamonds.csv")
+read_csv("storms.csv")
+```
+
+# Using here:
+
+```{r}
+library(here)
+```
+
+```{r}
+read_csv(here("penguins.csv"))
+read_csv(here("first/diamonds.csv"))
+read_csv(here("first/second/storms.csv"))
+```
+

@@ -1,0 +1,9 @@
+*.html
+!*.html.md
+*_files/
+.Rproj.user
+.Rhistory
+.Rdata
+.httr-oauth
+.DS_Store
+.quarto
